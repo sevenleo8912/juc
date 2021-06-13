@@ -20,7 +20,6 @@ public class T07_TestCyclicBarrier {
             new Thread(() -> {
                 try {
                     barrier.await();
-                    System.out.println("ÂúÈË£¬·¢³µ");
                 } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
