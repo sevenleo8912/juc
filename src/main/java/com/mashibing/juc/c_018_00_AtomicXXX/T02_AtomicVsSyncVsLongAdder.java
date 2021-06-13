@@ -5,9 +5,9 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
 
 public class T02_AtomicVsSyncVsLongAdder {
-    static long count2 = 0L;
-    static AtomicLong count1 = new AtomicLong(0L);
-    static LongAdder count3 = new LongAdder();
+    private static long count2 = 0L;
+    private static AtomicLong count1 = new AtomicLong(0L);
+    private static LongAdder count3 = new LongAdder();
 
     public static void main(String[] args) throws Exception {
         Thread[] threads = new Thread[1000];
