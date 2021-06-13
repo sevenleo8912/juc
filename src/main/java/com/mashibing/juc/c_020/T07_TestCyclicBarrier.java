@@ -20,7 +20,7 @@ public class T07_TestCyclicBarrier {
             new Thread(() -> {
                 try {
                     barrier.await();
-                    System.out.println("满人，发车");
+                    System.out.println("这是第：" + "个");
                 } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
