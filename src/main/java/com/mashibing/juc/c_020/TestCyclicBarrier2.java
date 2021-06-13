@@ -12,6 +12,7 @@ public class TestCyclicBarrier2 {
         CyclicBarrier barrier = new CyclicBarrier(20, new Runnable() {
             @Override
             public void run() {
+                //潢了之后再运行
                 System.out.println("满人，发车");
             }
         });
