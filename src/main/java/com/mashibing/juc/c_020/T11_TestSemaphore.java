@@ -14,7 +14,7 @@ public class T11_TestSemaphore {
                 s.acquire();
 
                 System.out.println("T1 running...");
-                Thread.sleep(200);
+                Thread.sleep(2000);
                 System.out.println("T1 running...");
 
             } catch (InterruptedException e) {
@@ -29,7 +29,7 @@ public class T11_TestSemaphore {
                 s.acquire();
 
                 System.out.println("T2 running...");
-                Thread.sleep(200);
+                Thread.sleep(2000);
                 System.out.println("T2 running...");
 
                 s.release();
