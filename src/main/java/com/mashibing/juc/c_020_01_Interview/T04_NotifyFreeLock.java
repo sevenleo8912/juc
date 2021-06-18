@@ -81,13 +81,14 @@ public class T04_NotifyFreeLock {
 						}
 					}
 					
-					try {
+					/*try {
 						TimeUnit.SECONDS.sleep(1);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
-					}
+					}*/
 				}
 			}
+            System.out.println("t1½áÊø");
 		}, "t1").start();
 		
 		

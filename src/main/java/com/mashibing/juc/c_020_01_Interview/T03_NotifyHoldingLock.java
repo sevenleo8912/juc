@@ -37,7 +37,7 @@ public class T03_NotifyHoldingLock { //wait notify
 		T03_NotifyHoldingLock c = new T03_NotifyHoldingLock();
 		
 		final Object lock = new Object();
-		
+
 		new Thread(() -> {
 			synchronized(lock) {
 				System.out.println("t2Æô¶¯");
@@ -64,7 +64,7 @@ public class T03_NotifyHoldingLock { //wait notify
 			synchronized(lock) {
 				for(int i=0; i<10; i++) {
 					c.add(new Object());
-					System.out.println("add " + i);
+					System.out.println(Thread.currentThread().getName()+"add " + i);
 					
 					if(c.size() == 5) {
 						lock.notify();

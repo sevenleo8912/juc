@@ -9,6 +9,7 @@ public class T13_TestLockSupport {
             for (int i = 0; i < 10; i++) {
                 System.out.println(i);
                 if(i == 5) {
+                    // 进入阻塞，线程停止执行。
                     LockSupport.park();
                 }
                 try {
@@ -21,16 +22,18 @@ public class T13_TestLockSupport {
 
         t.start();
 
-        LockSupport.unpark(t);
+        // 继续执行。
+//        LockSupport.unpark(t);
 
-        /*try {
+        // 停止8s再继续执行。
+        try {
             TimeUnit.SECONDS.sleep(8);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("after 8 senconds!");
 
-        LockSupport.unpark(t);*/
+        LockSupport.unpark(t);
 
     }
 }

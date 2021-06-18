@@ -71,7 +71,7 @@ public class T06_LockSupport {
 			e1.printStackTrace();
 		}
 
-		new Thread(() -> {
+		Thread t1 = new Thread(() -> {
 			System.out.println("t1Æô¶¯");
 			for (int i = 0; i < 10; i++) {
 				c.add(new Object());
@@ -81,14 +81,15 @@ public class T06_LockSupport {
 					LockSupport.unpark(t2);
 				}
 
-				/*try {
+				try {
 					TimeUnit.SECONDS.sleep(1);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-				}*/
+				}
 			}
 
-		}, "t1").start();
+		}, "t1");
+		t1.start();
 
 	}
 }

@@ -47,13 +47,14 @@ public class T05_CountDownLatch {
 		T05_CountDownLatch c = new T05_CountDownLatch();
 
 		CountDownLatch latch = new CountDownLatch(1);
+		CountDownLatch latch1 = new CountDownLatch(1);
 
 		new Thread(() -> {
 			System.out.println("t2启动");
 			if (c.size() != 5) {
 				try {
 					latch.await();
-					
+
 					//也可以指定等待时间
 					//latch.await(5000, TimeUnit.MILLISECONDS);
 				} catch (InterruptedException e) {
@@ -61,6 +62,7 @@ public class T05_CountDownLatch {
 				}
 			}
 			System.out.println("t2 结束");
+			latch1.countDown();
 
 		}, "t2").start();
 
@@ -74,13 +76,18 @@ public class T05_CountDownLatch {
 			System.out.println("t1启动");
 			for (int i = 0; i < 10; i++) {
 				c.add(new Object());
-				System.out.println("add " + i);
+				System.out.println(Thread.currentThread().getName()+":add " + i);
 
 				if (c.size() == 5) {
 					// 打开门闩，让t2得以执行
 					latch.countDown();
+					// 也可以通过这种方式看到想要的效果
+                    try {
+                        latch1.await();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 				}
-
 				/*try {
 					TimeUnit.SECONDS.sleep(1);
 				} catch (InterruptedException e) {
