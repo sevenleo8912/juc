@@ -1,11 +1,9 @@
 package com.mashibing.juc.c_022_RefTypeAndThreadLocal;
 
-import java.util.concurrent.TimeUnit;
-
 public class ThreadLocalTest {
-    static ThreadLocal<String> localVar = new ThreadLocal<>();
+    private static ThreadLocal<String> localVar = new ThreadLocal<>();
 
-    static void print(String str) {
+    private static void print(String str) {
         //打印当前线程中本地内存中本地变量的值
         System.out.println(str + " :" + localVar.get());
         //清除本地内存中的本地变量
