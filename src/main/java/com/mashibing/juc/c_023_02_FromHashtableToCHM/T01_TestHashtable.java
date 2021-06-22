@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class T01_TestHashtable {
 
-    static Hashtable<UUID, UUID> m = new Hashtable<>();
+    static Hashtable<UUID, UUID> map = new Hashtable<>();
 
     static int count = Constants.COUNT;
     static UUID[] keys = new UUID[count];
@@ -30,7 +30,7 @@ public class T01_TestHashtable {
         @Override
         public void run() {
             for(int i=start; i<start+gap; i++) {
-                m.put(keys[i], values[i]);
+                map.put(keys[i], values[i]);
             }
         }
     }
@@ -42,8 +42,7 @@ public class T01_TestHashtable {
         Thread[] threads = new Thread[THREAD_COUNT];
 
         for(int i=0; i<threads.length; i++) {
-            threads[i] =
-            new MyThread(i * (count/THREAD_COUNT));
+            threads[i] = new MyThread(i * (count/THREAD_COUNT));
         }
 
         for(Thread t : threads) {
@@ -61,7 +60,7 @@ public class T01_TestHashtable {
         long end = System.currentTimeMillis();
         System.out.println(end - start);
 
-        System.out.println(m.size());
+        System.out.println(map.size());
 
         //-----------------------------------
 
@@ -69,7 +68,7 @@ public class T01_TestHashtable {
         for (int i = 0; i < threads.length; i++) {
             threads[i] = new Thread(()->{
                 for (int j = 0; j < 10000000; j++) {
-                    m.get(keys[10]);
+                    map.get(keys[10]);
                 }
             });
         }

@@ -6,7 +6,7 @@ import java.util.concurrent.SynchronousQueue;
 public class T08_SynchronusQueue { //ÈÝÁ¿Îª0
 	public static void main(String[] args) throws InterruptedException {
 		BlockingQueue<String> strs = new SynchronousQueue<>();
-		
+
 		new Thread(()->{
 			try {
 				System.out.println(strs.take());
