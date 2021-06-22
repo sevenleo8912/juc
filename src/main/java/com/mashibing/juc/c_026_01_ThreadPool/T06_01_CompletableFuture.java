@@ -26,6 +26,7 @@ public class T06_01_CompletableFuture {
         System.out.println("use serial method call! " + (end - start));*/
 
         start = System.currentTimeMillis();
+        System.out.println(start);
 
         CompletableFuture<Double> futureTM = CompletableFuture.supplyAsync(()->priceOfTM());
         CompletableFuture<Double> futureTB = CompletableFuture.supplyAsync(()->priceOfTB());
