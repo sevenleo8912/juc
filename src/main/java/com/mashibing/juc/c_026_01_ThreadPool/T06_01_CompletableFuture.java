@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class T06_01_CompletableFuture {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         long start, end;
-
+        System.out.println();
         /*start = System.currentTimeMillis();
 
         priceOfTM();
