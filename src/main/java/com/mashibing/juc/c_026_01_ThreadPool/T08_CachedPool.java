@@ -23,6 +23,7 @@ public class T08_CachedPool {
 		TimeUnit.SECONDS.sleep(80);
 		
 		System.out.println(service);
+        service.shutdown();
 		
 		
 	}
