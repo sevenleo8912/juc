@@ -11,10 +11,8 @@ public class HelloQueue {
         Queue<Integer> q = new ArrayBlockingQueue<>(2);
         q.add(0);
         q.add(1);
-        q.add(2);
-        q.add(3);
+        /*q.add(2);
+        q.add(3);*/
         System.out.println(q);
-
-
     }
 }

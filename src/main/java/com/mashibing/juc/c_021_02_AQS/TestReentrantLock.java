@@ -8,6 +8,7 @@ public class TestReentrantLock {
 
     public static void main(String[] args) {
         ReentrantLock lock = new ReentrantLock();
+
         lock.lock();
         //synchronized (TestReentrantLock.class) {
             i++;
